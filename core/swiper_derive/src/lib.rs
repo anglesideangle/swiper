@@ -2,10 +2,10 @@ extern crate proc_macro;
 
 use core::fmt;
 
-use quote::{ToTokens, format_ident};
+use quote::{format_ident, ToTokens};
 use syn::{
-    Error, Expr, FnArg, Ident, ItemFn, Pat, PatType, ReturnType, parse_macro_input, parse_quote,
-    punctuated::Punctuated,
+    parse_macro_input, parse_quote, punctuated::Punctuated, Error, Expr, FnArg, Ident, ItemFn, Pat,
+    PatType, ReturnType,
 };
 
 // two macros
@@ -117,7 +117,7 @@ fn single_fn_to_ir(input: &ItemFn, wrapped_names: &[Ident]) -> syn::Result<Inter
                             #pat: &swiper_stealing::requirement::RevocableCell<#ty>
                         });
                         inner_params.push(parse_quote! { #pat: #ty });
-                        inner_args.push(parse_quote! { unsafe { *#pat.data.get() } });
+                        inner_args.push(parse_quote! { unsafe { &mut *#pat.data.get() } });
                         requirements_arr.push(parse_quote! { #ident });
                     } else {
                         outer_params.push(parse_quote! {

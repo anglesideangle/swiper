@@ -1,5 +1,5 @@
 [package]
-name = "swiper_proxy"
+name = "silence"
 version.workspace = true
 rust-version.workspace = true
 edition.workspace = true
@@ -9,4 +9,3 @@ repository.workspace = true
 homepage.workspace = true
 
 [dependencies]
-critical-section = "1.2.0"
