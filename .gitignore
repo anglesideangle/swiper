@@ -12,5 +12,7 @@
 !/core/**
 !/design/
 !/design/**
-!/silence/
-!/silence/**
+!/geometry/
+!/geometry/**
+!/docs/
+!/docs/**

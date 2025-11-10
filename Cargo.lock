@@ -3,12 +3,6 @@
 version = 4
 
 [[package]]
-name = "critical-section"
-version = "1.2.0"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "790eea4361631c5e7d22598ecd5723ff611904e3344ce8720784c93e3d83d40b"
-
-[[package]]
 name = "fastrand"
 version = "2.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -38,6 +32,10 @@ dependencies = [
  "parking",
  "pin-project-lite",
 ]
+
+[[package]]
+name = "geometry"
+version = "0.0.0"
 
 [[package]]
 name = "lite-async-test"
@@ -104,13 +102,6 @@ name = "swiper-stealing"
 version = "0.0.0"
 dependencies = [
  "futures-lite",
-]
-
-[[package]]
-name = "swiper_proxy"
-version = "0.0.0"
-dependencies = [
- "critical-section",
 ]
 
 [[package]]
